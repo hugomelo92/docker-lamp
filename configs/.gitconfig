@@ -2,6 +2,6 @@
 	ui = true
 [user]
 	name = Hugo Melo
-	email = seuemail@email.com
+	email = 
 [push]
 	default = simple

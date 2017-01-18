@@ -29,7 +29,7 @@ docker volume create --name persistence
 docker pull hugobmelo/lamp:$TAG
 
 #iniciando a imagem
-docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/sites-available:/etc/apache2/sites-available -p $APACHE_PORT:80 -p $MYSQL_PORT:3306 -p $SSH_PORT:22 hugobmelo/lamp:$TAG tail -f /dev/null
+docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/configs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v ${PWD}/sites-available:/etc/apache2/sites-available -p $APACHE_PORT:80 -p $MYSQL_PORT:3306 -p $SSH_PORT:22 hugobmelo/lamp:$TAG tail -f /dev/null
 
 sleep 2
 
