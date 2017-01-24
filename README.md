@@ -21,5 +21,5 @@ Ambiente de desenvolvimento - Docker (Ubuntu, Apache, MySql, PHP)
 
     cd docker-lamp
 
-    [sudo] sh docker-run.sh [5.6|7.1]
+    [sudo] sh docker.sh
 
