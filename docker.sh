@@ -86,5 +86,3 @@ case "$1" in
 	"pull") pull ;;
 	*) default ;;
 esac
-
-return
