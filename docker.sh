@@ -68,6 +68,8 @@ default () {
 
 		# parando a imagem (exit)
 		docker stop lamp
+
+		return
 	fi
 
 	pull
