@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 ssh () {
 	# entrando na imagem
