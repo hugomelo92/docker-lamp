@@ -1,1 +1,1 @@
-sh ~/docker/docker.sh "$1"
+cd ~/docker && sh docker.sh "$1"
