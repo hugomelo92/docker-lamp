@@ -21,5 +21,10 @@ Ambiente de desenvolvimento - Docker (Ubuntu, Apache, MySql, PHP)
 
     cd docker-lamp
 
-    [sudo] sh docker.sh
+    sudo cp lamp /usr/local/lamp
+
+    sudo chmod 775 /usr/local/lamp
+
+    [sudo] lamp run
+
 
