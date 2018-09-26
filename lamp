@@ -1,1 +1,2 @@
-cd ~/docker && sh docker.sh "$1"
+#!/bin/sh
+cd ${HOME}/docker-lamp && sh docker.sh "$1" 

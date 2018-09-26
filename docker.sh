@@ -33,9 +33,12 @@ run () {
 	fi
 
 	# carregando configuracoes
-	value=`cat configs/.config | grep apache:port=`
-	APACHE_PORT=$(echo "$value" | sed -e s/apache:port=/""/g)
-	echo "Porta Apache: $APACHE_PORT"
+	value=`cat configs/.config | grep http:port=`
+	HTTP_PORT=$(echo "$value" | sed -e s/http:port=/""/g)
+	echo "Porta http: $HTTP_PORT"
+	value=`cat configs/.config | grep https:port=`
+	HTTPS_PORT=$(echo "$value" | sed -e s/https:port=/""/g)
+	echo "Porta https: $HTTPS_PORT"
 	value=`cat configs/.config | grep mysql:port=`
 	MYSQL_PORT=$(echo "$value" | sed -e s/mysql:port=/""/g)
 	echo "Porta MySql: $MYSQL_PORT"
@@ -50,7 +53,7 @@ run () {
 	docker volume create --name persistence
 
 	# iniciando a imagem
-	docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/configs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v ${PWD}/sites-available:/etc/apache2/sites-available -p $APACHE_PORT:80 -p $MYSQL_PORT:3306 -p $SSH_PORT:22 hugobmelo/lamp:$PHP_VERSION tail -f /dev/null
+	docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/configs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v ${PWD}/sites-available:/etc/apache2/sites-available -p $HTTP_PORT:80 -p $HTTPS_PORT:443 -p $MYSQL_PORT:3306 -p $SSH_PORT:22 hugobmelo/lamp:$PHP_VERSION tail -f /dev/null
 
 	sleep 2
 
