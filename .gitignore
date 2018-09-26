@@ -1,2 +1,3 @@
 www/*
+sites-available/vhosts/*
 .DS_Store
