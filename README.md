@@ -9,7 +9,7 @@ Ambiente de desenvolvimento - Docker (Ubuntu, Apache, MySql, PHP)
 
  - Ubuntu
  - Apache 2.4
- - PHP 5.6|7.1
+ - PHP 5.6|7.2
  - MySQL 5.7
  - phpMyAdmin
  - Composer
@@ -21,9 +21,9 @@ Ambiente de desenvolvimento - Docker (Ubuntu, Apache, MySql, PHP)
 
     cd docker-lamp
 
-    sudo cp lamp /usr/local/lamp
+    sudo cp lamp /usr/local/bin/lamp
 
-    sudo chmod 775 /usr/local/lamp
+    sudo chmod 775 /usr/local/bin/lamp
 
     [sudo] lamp run
 

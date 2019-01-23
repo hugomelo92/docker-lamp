@@ -53,7 +53,7 @@ run () {
 	docker volume create --name persistence
 
 	# iniciando a imagem
-	docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/configs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v ${PWD}/sites-available:/etc/apache2/sites-available -p $HTTP_PORT:80 -p $HTTPS_PORT:443 -p $MYSQL_PORT:3306 -p $SSH_PORT:22 hugobmelo/lamp:$PHP_VERSION tail -f /dev/null
+	docker run -d --name lamp -v persistence:/var/lib/mysql -v ${PWD}/www:/var/www -v ${HOME}/.ssh:/root/.ssh -v ${PWD}/configs/.gitconfig:/root/.gitconfig -v ${PWD}/configs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf -v ${PWD}/sites-available:/etc/apache2/sites-available -p $HTTP_PORT:80 -p $HTTPS_PORT:443 -p $MYSQL_PORT:3306 hugobmelo/lamp:$PHP_VERSION tail -f /dev/null
 
 	sleep 2
 
